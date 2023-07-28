@@ -1,0 +1,62 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Eurostile', sans-serif;
+}
+
+@font-face {
+  font-family: 'Eurostile'; 
+  src: url('/fonts/eurostile.ttf') format('truetype');
+}
+
+h1 { 
+  font-family: 'Eurostile', sans-serif;
+  text-transform: uppercase;
+
+}
+
+.background {
+  background-color: #ffffff;
+  opacity: 0.8;
+  
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  margin: 10vh;
+}
+
+form {
+  padding: 10px;
+  margin: 10vh;
+}
+
+form * {
+  padding: 10px;
+}
+
+form, form > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#word_input {
+  width: 300px;
+  text-align: center;
+}

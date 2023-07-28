@@ -1,0 +1,13 @@
+
+
+<% if @result == 0 %>
+<h1>Whaaaaaat...?</h1>
+  <div>You are so creative! But that is not a scrabble word... </div>
+  <div><a href="/">I want to search another word</a></div>
+<% else %>
+<h1><%= @word.capitalize %></h1>
+ <h2>Go for it!</h2>
+ <div>Your superior intellectual instincts were right! <%= @word.capitalize%> is a real word in the Scrabbliverse!</div>
+ <div> It will earn you <%= @result %> points.</div>
+ <div><a href="/">I want to search another word</a></div>
+<% end %>

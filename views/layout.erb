@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sinatra Template</title>
+    <title>Scrabble Word Check</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="/css/styles.css" >
   </head>
 
   <body>
-    <%= yield %>
+    <div class="background"></div>
+    <div class="card">
+      <%= yield %>
+    </div>
+    
+
+    <footer>
+      <img src="https://www.wordnik.com/img/wordnik_badge_a3.png">
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const inputField = document.getElementById('word_input');
+
+        inputField.addEventListener('input', function() {
+          const currentValue = inputField.value;
+
+          const capitalizedValue = currentValue.toUpperCase();
+          inputField.value = capitalizedValue;
+        });
+
+        inputField.addEventListener('hover', function() {
+          
+        })
+      });
+    </script>
+
   </body>
+  
+  
 </html>
