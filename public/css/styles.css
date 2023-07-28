@@ -31,7 +31,6 @@ div {
   opacity: 0.1;
   background-image:  linear-gradient(#000000 0.6px, transparent 0.6px), linear-gradient(to right, #000000 0.6px, #ffffff 0.6px);
   background-size: 10px 10px;
-  
   position: fixed;
   top: 0;
   bottom: 0;
@@ -71,10 +70,11 @@ form, form > div {
 button {
   font-family: Inter;
   font-weight: 600;
+  margin-bottom: 10px;
 }
 
 a {
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   text-decoration: underline;
   color: black;
@@ -86,4 +86,11 @@ a {
 
 h2, .result {
   margin-top: 10px;
+}
+
+.discord, a.discord {
+  padding: 0;
+  font-family: 'Eurostile', sans-serif !important;
+  font-size: 0.7rem;
+  font-weight: 100;
 }
