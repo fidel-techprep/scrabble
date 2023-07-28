@@ -9,14 +9,9 @@
 
   <body>
     <div class="background"></div>
-    <div class="card">
-      <%= yield %>
-    </div>
     
-
-    <footer>
-      <img src="https://www.wordnik.com/img/wordnik_badge_a3.png">
-    </footer>
+      <%= yield %>
+   
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -30,7 +25,7 @@
         });
 
         inputField.addEventListener('hover', function() {
-          
+
         })
       });
     </script>

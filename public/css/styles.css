@@ -1,24 +1,36 @@
 
+@font-face {
+  font-family: 'Eurostile'; 
+  src: url('/fonts/eurostile.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter.woff2') format('woff');
+}
+
 * {
   margin: 0;
   padding: 0;
   font-family: 'Eurostile', sans-serif;
 }
 
-@font-face {
-  font-family: 'Eurostile'; 
-  src: url('/fonts/eurostile.ttf') format('truetype');
-}
 
 h1 { 
-  font-family: 'Eurostile', sans-serif;
-  text-transform: uppercase;
-
+  font-family: 'Inter', sans-serif;
+  font-weight: 800; 
+  font-size: 5rem;
+  text-align: center;
 }
 
+div {
+  text-align: center;
+}
 .background {
   background-color: #ffffff;
-  opacity: 0.8;
+  opacity: 0.1;
+  background-image:  linear-gradient(#000000 0.6px, transparent 0.6px), linear-gradient(to right, #000000 0.6px, #ffffff 0.6px);
+  background-size: 10px 10px;
   
   position: fixed;
   top: 0;
@@ -32,18 +44,12 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  backdrop-filter: blur(5px);
-  margin: 10vh;
+  padding: 10vh;
 }
 
 form {
   padding: 10px;
-  margin: 10vh;
+  margin: 8vh;
 }
 
 form * {
@@ -59,4 +65,25 @@ form, form > div {
 #word_input {
   width: 300px;
   text-align: center;
+  margin-bottom: 35px;
+}
+
+button {
+  font-family: Inter;
+  font-weight: 600;
+}
+
+a {
+  font-family: 'Inter';
+  font-weight: 600;
+  text-decoration: underline;
+  color: black;
+}
+
+.link-container {
+  margin-top: 35px;
+}
+
+h2, .result {
+  margin-top: 10px;
 }
