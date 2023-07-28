@@ -58,7 +58,7 @@ Thread.new { bot.run }
 # Helper method to query the API
 def word_check(word)
   ## Construct URL
-  url = "https://www.wordgamedictionary.com/api/v1/references/scrabble/#{word}?key=#{SCRABBLE_API_KEY}1"
+  url = "https://www.wordgamedictionary.com/api/v1/references/scrabble/#{word}?key=#{SCRABBLE_API_KEY}"
 
   ## Ensure input does not contain invalid characters
   if word.match(/\A[a-zA-Z]+\z/) 
