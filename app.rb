@@ -1,7 +1,6 @@
 require "sinatra"
 require "sinatra/reloader"
 require "http"
-require "ox"
 require "discordrb"
 
 # Fetch keys from the environment
@@ -58,20 +57,22 @@ Thread.new { bot.run }
 # Helper method to query the API
 def word_check(word)
   ## Construct URL
-  url = "https://www.wordgamedictionary.com/api/v1/references/scrabble/#{word}?key=#{SCRABBLE_API_KEY}"
+  url = "https://scrabble-api.fly.dev/api/word/#{word}"
 
   ## Ensure input does not contain invalid characters
   if word.match(/\A[a-zA-Z]+\z/) 
     begin
-      response = Ox.load(HTTP.get(url).to_s, mode: :hash)[:entry]
+      response = HTTP.auth("Bearer #{SCRABBLE_API_KEY}").get(url).to_s
+      parsed_response = JSON.parse(response)
+      
     rescue StandardError => e ### Handle parsing/network errors
-      puts "<div>There was an error :( #{e.message}</div>"
-      response = {:scrabblescore => nil}
+      puts "There was an error :( #{e.message}"
+      parsed_response = nil
     end
-    ### Word found
-    search_result = response[:scrabble] == "0" ? 0 : response[:scrabblescore] 
+    ### Return word score if found, 0 if not found
+    search_result = parsed_response.is_a?(Integer) ? parsed_response : 0
   else
-    ### Word not found
+    ### Word contains invalid characters
     search_result = 0
   end
 end
