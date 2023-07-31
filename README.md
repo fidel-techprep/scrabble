@@ -1,18 +1,5 @@
-# sinatra-template
+# Scrabble Word Check
 
-Use this repository to create new Sinatra apps. 
+The app allows the user to determine if a word is valid in the game Scrabble. If the submitted word is valid, the app will also display its base value in the game.
 
-Optionally, to use `ActiveRecord` for database operations, add to the `app.rb`:
-
-```ruby
-require "sinatra/activerecord"
-```
-
-And in the `config/environment.rb` file add this code block:
-
-```ruby
-configure do
-  # setup a database connection
-  set(:database, { adapter: "sqlite3", database: "db/development.sqlite3" })
-end
-```
+Please check [this repository](https://github.com/fidel-techprep/scrabble-api) for the API code.
